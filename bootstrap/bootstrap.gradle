@@ -19,6 +19,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 ext.repo = Grgit.open(project.file('.'))
+ext.pluginVersion = version + '-g' + repo.head().abbreviatedId + (repo.status().clean ? '' : '-DIRTY')
 
 repositories {
   mavenCentral()
@@ -35,7 +36,7 @@ processResources {
   from('src/main/resources') {
     include '*'
     filter {
-      it.replace('$version', version + '-g' + repo.head().abbreviatedId);
+      it.replace('$version', pluginVersion);
     }
   }
 }
