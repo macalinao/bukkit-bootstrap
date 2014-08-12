@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-  compile 'org.bukkit:bukkit:1.7.9-R0.3-SNAPSHOT'
+  compile 'org.bukkit:bukkit:1.7.10-R0.1-SNAPSHOT'
 }
 
 processResources {
